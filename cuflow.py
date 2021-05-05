@@ -9,8 +9,8 @@ import shapely.affinity as sa
 import shapely.ops as so
 import math
 
-import gerber
-from excellon import excellon
+from . import gerber
+from . import excellon
 import hershey
 
 def inches(x):  return x * 25.4
