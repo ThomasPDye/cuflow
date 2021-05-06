@@ -11,7 +11,7 @@ import math
 
 from . import gerber
 from . import excellon
-import hershey
+from . import hershey
 
 def inches(x):  return x * 25.4
 def mil(x):     return inches(x / 1000)
@@ -827,7 +827,7 @@ class Board:
             with open(basename + "." + id, "wt") as f:
                 l.save(f)
         with open(basename + ".TXT", "wt") as f:
-            excellon(f, self.holes)
+            resultexcellon = excellon.Excellon(f, self.holes)
 
         substrate = self.substrate()
         mask = substrate.preview()
